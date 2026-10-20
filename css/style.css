@@ -1,0 +1,698 @@
+/* ==========================================================================
+   Editorial Scrapbook / Zine Portfolio Theme
+   Built on Bootstrap 5 with bespoke Kraft Paper & Sticker Aesthetics
+   ========================================================================== */
+
+:root {
+  --bg-paper: #ece7de;
+  --bg-paper-dark: #e2dcd2;
+  --bg-card: #f9f7f2;
+  --sticker-bg: #ffffff;
+  --sticker-bg-alt: #fbfbf8;
+  --ink-black: #161616;
+  --ink-charcoal: #2c2c2c;
+  --ink-muted: #5e5a54;
+  --ink-border: #1a1a1a;
+  --tape-color: rgba(245, 238, 220, 0.75);
+  --tape-border: rgba(190, 180, 160, 0.4);
+  --accent-highlight: #ffdd57;
+  --font-mono: 'Space Mono', 'Courier Prime', Courier, monospace;
+  --font-typewriter: 'Courier Prime', 'Space Mono', monospace;
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --shadow-hard: 3px 3px 0px var(--ink-border);
+  --shadow-hard-lg: 5px 5px 0px var(--ink-border);
+  --shadow-hard-sm: 2px 2px 0px var(--ink-border);
+}
+
+/* Dark mode / Blueprint variation */
+[data-theme="dark"] {
+  --bg-paper: #1c1c1e;
+  --bg-paper-dark: #141416;
+  --bg-card: #252528;
+  --sticker-bg: #2a2a2e;
+  --sticker-bg-alt: #222226;
+  --ink-black: #f0ede6;
+  --ink-charcoal: #dedad2;
+  --ink-muted: #a6a29a;
+  --ink-border: #ece7de;
+  --tape-color: rgba(70, 70, 75, 0.6);
+  --tape-border: rgba(120, 120, 125, 0.3);
+  --accent-highlight: #e6b800;
+  --shadow-hard: 3px 3px 0px #ffffff;
+  --shadow-hard-lg: 5px 5px 0px #ffffff;
+  --shadow-hard-sm: 2px 2px 0px #ffffff;
+}
+
+/* Base styling */
+body {
+  background-color: var(--bg-paper);
+  color: var(--ink-black);
+  font-family: var(--font-mono);
+  font-size: 15px;
+  line-height: 1.65;
+  letter-spacing: -0.01em;
+  background-image: 
+    radial-gradient(var(--ink-muted) 0.5px, transparent 0.5px),
+    radial-gradient(var(--ink-muted) 0.5px, var(--bg-paper) 0.5px);
+  background-size: 32px 32px;
+  background-position: 0 0, 16px 16px;
+  background-opacity: 0.04;
+  overflow-x: hidden;
+  position: relative;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Subtle paper texture overlay */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.015),
+    rgba(0, 0, 0, 0.015) 1px,
+    transparent 1px,
+    transparent 2px
+  );
+  z-index: 9999;
+}
+
+/* Portfolio Container matching the editorial zine proportion */
+.portfolio-zine-wrapper {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 40px 20px 80px 20px;
+  position: relative;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+p {
+  color: var(--ink-charcoal);
+  font-family: var(--font-typewriter);
+  font-size: 14.5px;
+  line-height: 1.7;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+a:hover {
+  color: var(--ink-black);
+}
+
+/* Sticky top toolbar / control bar */
+.zine-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 35px;
+  padding-bottom: 15px;
+  border-bottom: 1.5px dashed rgba(26, 26, 26, 0.3);
+}
+
+.zine-tagline {
+  font-size: 11.5px;
+  letter-spacing: 0.08em;
+  font-weight: 700;
+  color: var(--ink-muted);
+  text-transform: uppercase;
+}
+
+/* Button & interactive badges */
+.sticker-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: var(--sticker-bg);
+  color: var(--ink-black);
+  border: 2px solid var(--ink-border);
+  box-shadow: var(--shadow-hard);
+  padding: 8px 18px;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 15px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  user-select: none;
+  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.2s ease;
+  z-index: 10;
+  position: relative;
+}
+
+.sticker-badge:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: var(--shadow-hard-lg);
+  cursor: default;
+}
+
+.sticker-badge.clickable {
+  cursor: pointer;
+}
+
+.sticker-badge.clickable:active {
+  transform: translateY(1px) scale(0.98);
+  box-shadow: var(--shadow-hard-sm);
+}
+
+/* Rotations for scrapbook feel */
+.rotate-neg-4 { transform: rotate(-4deg); }
+.rotate-neg-3 { transform: rotate(-3deg); }
+.rotate-neg-2 { transform: rotate(-2deg); }
+.rotate-neg-1 { transform: rotate(-1deg); }
+.rotate-pos-1 { transform: rotate(1deg); }
+.rotate-pos-2 { transform: rotate(2deg); }
+.rotate-pos-3 { transform: rotate(3deg); }
+.rotate-pos-4 { transform: rotate(4deg); }
+
+/* Washi Tape styling for corners */
+.washi-tape {
+  position: absolute;
+  width: 90px;
+  height: 26px;
+  background-color: var(--tape-color);
+  border: 1px solid var(--tape-border);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+  z-index: 12;
+  pointer-events: none;
+}
+
+.washi-tape-top-left {
+  top: -10px;
+  left: 20px;
+  transform: rotate(-5deg);
+}
+
+.washi-tape-top-right {
+  top: -10px;
+  right: 20px;
+  transform: rotate(4deg);
+}
+
+/* Photo Frames */
+.photo-frame {
+  position: relative;
+  display: inline-block;
+  background: #ffffff;
+  padding: 10px 10px 18px 10px;
+  border: 2px solid var(--ink-border);
+  box-shadow: var(--shadow-hard-lg);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.photo-frame img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid rgba(0,0,0,0.15);
+  filter: grayscale(100%) contrast(108%);
+  transition: filter 0.4s ease, transform 0.3s ease;
+}
+
+.photo-frame:hover {
+  transform: translateY(-3px) scale(1.01);
+  box-shadow: 7px 7px 0px var(--ink-border);
+}
+
+.photo-frame:hover img {
+  filter: grayscale(85%) contrast(110%);
+}
+
+/* Hero Section */
+.hero-section {
+  position: relative;
+  margin-bottom: 70px;
+}
+
+.hero-name-group {
+  position: relative;
+  margin-bottom: 25px;
+}
+
+.hero-badge-top {
+  position: absolute;
+  top: 40px;
+  left: 8%;
+  z-index: 15;
+}
+
+.hero-badge-bottom {
+  position: absolute;
+  bottom: 20px;
+  right: 6%;
+  z-index: 15;
+}
+
+.hero-portrait-wrapper {
+  max-width: 380px;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* Looped Doodle Arrow */
+.doodle-arrow-top {
+  position: absolute;
+  top: 75px;
+  left: 36%;
+  width: 140px;
+  height: 90px;
+  z-index: 14;
+  pointer-events: none;
+}
+
+/* Sections Divider */
+.zine-divider {
+  width: 100%;
+  height: 2px;
+  background-color: var(--ink-border);
+  margin: 60px 0;
+  position: relative;
+}
+
+.zine-divider::after {
+  content: "✤";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--bg-paper);
+  padding: 0 10px;
+  font-size: 14px;
+}
+
+/* Section 1: My Work */
+.work-section {
+  margin-bottom: 70px;
+}
+
+.work-badge-anchor {
+  position: absolute;
+  top: -18px;
+  left: 20px;
+  z-index: 15;
+}
+
+.work-photo-card {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.work-bio-text {
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.8;
+  margin-bottom: 28px;
+  color: var(--ink-black);
+}
+
+.project-item {
+  position: relative;
+  padding: 14px 12px;
+  margin-bottom: 16px;
+  border-left: 3px solid transparent;
+  transition: all 0.2s ease;
+  border-radius: 2px;
+}
+
+.project-item:hover {
+  background-color: rgba(255, 255, 255, 0.45);
+  border-left: 3px solid var(--ink-border);
+  transform: translateX(4px);
+}
+
+.project-item .asterisk-bullet {
+  font-size: 20px;
+  line-height: 1;
+  color: var(--ink-black);
+  margin-right: 8px;
+  display: inline-block;
+}
+
+.project-title {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 13.5px;
+  letter-spacing: 0.05em;
+  margin-bottom: 4px;
+}
+
+.project-desc {
+  font-size: 13.5px;
+  color: var(--ink-muted);
+  margin-bottom: 0;
+}
+
+.project-meta-pill {
+  font-size: 11px;
+  padding: 2px 6px;
+  background: var(--sticker-bg);
+  border: 1px solid var(--ink-border);
+  margin-left: 6px;
+}
+
+/* Section 2: Services I Offer */
+.services-section {
+  margin-bottom: 70px;
+  text-align: center;
+}
+
+.services-box-header {
+  display: inline-block;
+  background-color: var(--sticker-bg);
+  border: 2px solid var(--ink-border);
+  box-shadow: var(--shadow-hard);
+  padding: 12px 34px;
+  margin-bottom: 45px;
+  position: relative;
+}
+
+.services-box-header h2 {
+  font-size: 19px;
+  margin: 0;
+  letter-spacing: 0.1em;
+}
+
+.service-card {
+  background-color: rgba(255, 255, 255, 0.3);
+  border: 1.5px dashed var(--ink-border);
+  padding: 24px 20px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  transition: all 0.25s ease;
+  position: relative;
+}
+
+.service-card:hover {
+  background-color: var(--sticker-bg);
+  border-style: solid;
+  border-width: 2px;
+  box-shadow: var(--shadow-hard);
+  transform: translateY(-4px);
+}
+
+.service-icon-wrap {
+  width: 56px;
+  height: 56px;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.service-icon-wrap svg {
+  width: 44px;
+  height: 44px;
+  stroke: var(--ink-black);
+  fill: none;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: transform 0.2s ease;
+}
+
+.service-card:hover .service-icon-wrap svg {
+  transform: scale(1.1) rotate(-3deg);
+}
+
+.service-title {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  margin-bottom: 8px;
+}
+
+.service-desc {
+  font-size: 13px;
+  color: var(--ink-muted);
+  margin-bottom: 0;
+  line-height: 1.6;
+}
+
+/* Section 3: Connect With Me */
+.connect-section {
+  margin-bottom: 50px;
+}
+
+.connect-badge-anchor {
+  position: absolute;
+  bottom: -15px;
+  left: 20px;
+  z-index: 15;
+}
+
+.contact-info-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 20px 0;
+}
+
+.contact-info-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px dashed rgba(26, 26, 26, 0.25);
+  padding-bottom: 12px;
+  font-family: var(--font-mono);
+  font-size: 13.5px;
+}
+
+.contact-label {
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: var(--ink-black);
+}
+
+.contact-val {
+  color: var(--ink-charcoal);
+  font-weight: 600;
+}
+
+.copy-btn {
+  background: var(--sticker-bg);
+  border: 1.5px solid var(--ink-border);
+  font-size: 11px;
+  font-family: var(--font-mono);
+  padding: 3px 8px;
+  cursor: pointer;
+  box-shadow: 1.5px 1.5px 0 var(--ink-border);
+  transition: all 0.15s ease;
+}
+
+.copy-btn:hover {
+  background: var(--accent-highlight);
+  transform: translate(-1px, -1px);
+  box-shadow: 2px 2px 0 var(--ink-border);
+}
+
+.copy-btn:active {
+  transform: translate(1px, 1px);
+  box-shadow: none;
+}
+
+/* Quick Message Paper Form */
+.paper-form {
+  background-color: var(--sticker-bg);
+  border: 2px solid var(--ink-border);
+  box-shadow: var(--shadow-hard);
+  padding: 20px;
+  margin-top: 25px;
+  position: relative;
+}
+
+.paper-form .form-label {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  margin-bottom: 4px;
+}
+
+.paper-form .form-control {
+  background-color: transparent;
+  border: 1.5px solid var(--ink-border);
+  border-radius: 0;
+  font-family: var(--font-typewriter);
+  font-size: 13.5px;
+  padding: 8px 12px;
+  color: var(--ink-black);
+  margin-bottom: 12px;
+}
+
+.paper-form .form-control:focus {
+  background-color: #fff;
+  border-color: var(--ink-black);
+  box-shadow: 2px 2px 0px var(--ink-border);
+  outline: none;
+}
+
+.paper-btn-submit {
+  width: 100%;
+  background-color: var(--ink-black);
+  color: #fff;
+  border: 2px solid var(--ink-black);
+  padding: 10px 16px;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  box-shadow: var(--shadow-hard);
+  transition: all 0.2s ease;
+}
+
+.paper-btn-submit:hover {
+  background-color: var(--sticker-bg);
+  color: var(--ink-black);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-hard-lg);
+}
+
+/* Footer */
+.zine-footer {
+  text-align: center;
+  padding-top: 35px;
+  border-top: 1.5px dashed rgba(26, 26, 26, 0.3);
+  font-size: 12px;
+  color: var(--ink-muted);
+}
+
+.zine-footer a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* Modal styling for projects */
+.modal-content.zine-modal {
+  background-color: var(--bg-paper);
+  border: 2.5px solid var(--ink-border);
+  box-shadow: 8px 8px 0 var(--ink-border);
+  border-radius: 0;
+  padding: 15px;
+}
+
+.modal-header.zine-modal-header {
+  border-bottom: 2px solid var(--ink-border);
+  padding-bottom: 15px;
+}
+
+.btn-close-zine {
+  background: var(--sticker-bg);
+  border: 2px solid var(--ink-border);
+  font-family: var(--font-mono);
+  font-weight: 700;
+  padding: 4px 10px;
+  cursor: pointer;
+  box-shadow: 2px 2px 0 var(--ink-border);
+}
+
+.btn-close-zine:hover {
+  background: #ff5e57;
+  color: white;
+}
+
+/* Toast notification */
+.toast-stamp {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  background: var(--accent-highlight);
+  color: #000;
+  border: 2px solid #000;
+  box-shadow: 3px 3px 0 #000;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 700;
+  padding: 10px 18px;
+  z-index: 10000;
+  transform: translateY(100px);
+  opacity: 0;
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  pointer-events: none;
+}
+
+.toast-stamp.show {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* Theme switch button */
+.theme-toggle-btn {
+  background: var(--sticker-bg);
+  border: 1.5px solid var(--ink-border);
+  box-shadow: 2px 2px 0 var(--ink-border);
+  padding: 4px 10px;
+  font-size: 12px;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.theme-toggle-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 3px 3px 0 var(--ink-border);
+}
+
+/* Responsiveness adjustments */
+@media (max-width: 768px) {
+  .portfolio-zine-wrapper {
+    padding: 20px 15px 50px 15px;
+  }
+  
+  .hero-badge-top {
+    position: relative;
+    top: 0;
+    left: 0;
+    display: inline-block;
+    margin-bottom: 12px;
+  }
+  
+  .hero-badge-bottom {
+    position: relative;
+    bottom: 0;
+    right: 0;
+    display: inline-block;
+    margin-top: 12px;
+  }
+  
+  .doodle-arrow-top {
+    display: none;
+  }
+  
+  .hero-portrait-wrapper {
+    max-width: 100%;
+  }
+
+  .work-badge-anchor {
+    position: static;
+    margin-bottom: 12px;
+    display: inline-block;
+  }
+
+  .connect-badge-anchor {
+    position: static;
+    margin-bottom: 12px;
+    display: inline-block;
+  }
+  
+  .service-card {
+    text-align: left;
+  }
+}

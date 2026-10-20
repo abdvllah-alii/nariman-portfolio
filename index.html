@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nariman Hassan — Portfolio</title>
+  <meta name="description" content="Editorial scrapbook portfolio of Nariman Hassan, freelance web developer and digital marketing enthusiast. Built with Bootstrap 5.">
+  
+  <!-- Google Fonts: Space Mono & Courier Prime -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  
+  <!-- Custom Scrapbook Theme CSS -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Main Zine Container -->
+  <div class="portfolio-zine-wrapper">
+    
+    <!-- Top Micro Toolbar -->
+    <header class="zine-toolbar">
+      <div class="zine-tagline">
+        <span class="d-none d-sm-inline">PORTFOLIO </span> 
+      </div>
+      <div class="d-flex align-items-center gap-2">
+        <button id="themeToggle" class="theme-toggle-btn" aria-label="Toggle visual theme">
+          <i class="bi bi-moon-stars"></i> [ DARK MODE ]
+        </button>
+      </div>
+    </header>
+
+    <!-- ==========================================
+         HERO SECTION: PORTRAIT & NAME STICKERS
+         ========================================== -->
+    <section class="hero-section text-center">
+      
+      <div class="hero-name-group">
+        <!-- Top Tilted Sticker Badge -->
+        <div class="hero-badge-top">
+          <div class="sticker-badge rotate-neg-3" id="badgeFirstName">
+            <span>NARIMAN</span>
+          </div>
+        </div>
+
+        <!-- Looped Hand-drawn Arrow SVG -->
+        <svg class="doodle-arrow-top" viewBox="0 0 160 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M 20 28 C 55 12, 90 8, 115 28 C 138 48, 132 78, 105 78 C 78 78, 80 44, 115 52 C 132 56, 142 70, 148 84" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" fill="none"/>
+          <path d="M 136 82 L 149 85 L 151 72" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+
+        <!-- Hero Portrait Image Frame -->
+        <div class="hero-portrait-wrapper">
+          <div class="photo-frame">
+            <!-- Washi Tape decorative stickers on corners -->
+            <div class="washi-tape washi-tape-top-left"></div>
+            <div class="washi-tape washi-tape-top-right"></div>
+            
+            <img src="assets/images/portrait.jpeg" alt="Portrait of Zukiswa Phiri, freelance copywriter" width="400" height="580" loading="eager" fetchpriority="high">
+          </div>
+        </div>
+
+        <!-- Bottom Overlapping Tilted Sticker Badge -->
+        <div class="hero-badge-bottom">
+          <div class="sticker-badge rotate-pos-3" id="badgeLastName">
+            <span>PROGRAMMING</span>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ==========================================
+         SECTION 1: MY WORK :)
+         ========================================== -->
+    <section class="work-section" id="work">
+      <div class="row align-items-center g-4">
+        
+        <!-- Left: Workspace Desk Photo with Overlapping Badge -->
+        <div class="col-12 col-md-5">
+          <div class="work-photo-card">
+            <!-- Tilted Sticker: MY WORK :) -->
+            <div class="work-badge-anchor">
+              <div class="sticker-badge rotate-neg-2">
+                <span>MY WORK</span>
+                <!-- Hand-drawn Smiley Face SVG -->
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <circle cx="12" cy="12" r="9.5"></circle>
+                  <circle cx="8.5" cy="9.5" r="1.2" fill="currentColor"></circle>
+                  <circle cx="15.5" cy="9.5" r="1.2" fill="currentColor"></circle>
+                  <path d="M8 14.5c1 1.5 2.5 2 4 2s3-.5 4-2"></path>
+                </svg>
+              </div>
+            </div>
+
+            <!-- Workspace Flatlay Photo Frame -->
+            <div class="photo-frame mt-3">
+              <div class="washi-tape washi-tape-top-left"></div>
+              <img src="assets/images/workspace.jpg" alt="Black and white mechanical keyboard, desk setup, and notebook sketches" width="400" height="533" loading="lazy">
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Bio & Project List -->
+        <div class="col-12 col-md-7 ps-md-4">
+          
+          <!-- Bio Paragraph -->
+          <p class="work-bio-text">
+            <strong>Nariman Hassan</strong> is an aspiring web developer and digital marketing enthusiast with a foundation in programming, website development, and online marketing. Passionate about technology, creativity, and building digital experiences.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Subtle divider -->
+    <div class="zine-divider"></div>
+
+    <!-- ==========================================
+         SECTION 2: SERVICES I OFFER
+         ========================================== -->
+    <section class="services-section" id="services">
+      
+      <!-- Framed Box Header -->
+      <div class="services-box-header">
+        <h2>MY SKILLS</h2>
+      </div>
+
+      <!-- 2x2 Skills Grid (Responsive Bootstrap Grid) -->
+      <div class="row row-cols-1 row-cols-md-2 g-4 text-start">
+        
+        <!-- Skill 1: Programming -->
+        <div class="col">
+          <div class="service-card">
+            <div class="service-icon-wrap">
+              <!-- Hand-drawn Code SVG -->
+              <svg viewBox="0 0 48 48" aria-hidden="true">
+                <polyline points="16,14 6,24 16,34"></polyline>
+                <polyline points="32,14 42,24 32,34"></polyline>
+                <line x1="28" y1="10" x2="20" y2="38"></line>
+              </svg>
+            </div>
+            <h3 class="service-title">PROGRAMMING</h3>
+            <p class="service-desc">Building efficient and clean code using modern programming languages, with a focus on logic, structure, and problem-solving fundamentals.</p>
+          </div>
+        </div>
+
+        <!-- Skill 2: Problem Solving -->
+        <div class="col">
+          <div class="service-card">
+            <div class="service-icon-wrap">
+              <!-- Hand-drawn Lightbulb SVG -->
+              <svg viewBox="0 0 48 48" aria-hidden="true">
+                <path d="M 24 6 C 16 6 10 12 10 20 C 10 26 14 30 18 33 L 18 38 L 30 38 L 30 33 C 34 30 38 26 38 20 C 38 12 32 6 24 6 Z"></path>
+                <line x1="18" y1="42" x2="30" y2="42"></line>
+                <line x1="20" y1="38" x2="20" y2="42"></line>
+                <line x1="28" y1="38" x2="28" y2="42"></line>
+              </svg>
+            </div>
+            <h3 class="service-title">PROBLEM SOLVING</h3>
+            <p class="service-desc">Analytical thinking, debugging, and breaking down complex challenges into simple, actionable steps to deliver effective solutions.</p>
+          </div>
+        </div>
+
+        <!-- Skill 3: Marketing -->
+        <div class="col">
+          <div class="service-card">
+            <div class="service-icon-wrap">
+              <!-- Hand-drawn Megaphone SVG -->
+              <svg viewBox="0 0 48 48" aria-hidden="true">
+                <path d="M 10 18 L 10 30 L 16 30 L 16 18 Z"></path>
+                <path d="M 16 18 L 38 10 L 38 38 L 16 30 Z"></path>
+                <path d="M 10 22 C 6 22 4 24 4 26 C 4 28 6 28 10 28"></path>
+                <line x1="16" y1="30" x2="14" y2="38"></line>
+                <line x1="10" y1="30" x2="8" y2="38"></line>
+              </svg>
+            </div>
+            <h3 class="service-title">MARKETING</h3>
+            <p class="service-desc">Digital marketing strategies, social media campaigns, content planning, and audience engagement to grow brands and reach the right people.</p>
+          </div>
+        </div>
+
+        <!-- Skill 4: Web Developer -->
+        <div class="col">
+          <div class="service-card">
+            <div class="service-icon-wrap">
+              <!-- Hand-drawn Browser SVG -->
+              <svg viewBox="0 0 48 48" aria-hidden="true">
+                <rect x="6" y="10" width="36" height="28" rx="2"></rect>
+                <line x1="6" y1="18" x2="42" y2="18"></line>
+                <circle cx="12" cy="14" r="1.5" fill="currentColor"></circle>
+                <circle cx="17" cy="14" r="1.5" fill="currentColor"></circle>
+                <circle cx="22" cy="14" r="1.5" fill="currentColor"></circle>
+                <polyline points="16,26 12,30 16,34"></polyline>
+                <polyline points="32,26 36,30 32,34"></polyline>
+                <line x1="26" y1="24" x2="22" y2="36"></line>
+              </svg>
+            </div>
+            <h3 class="service-title">WEB DEVELOPER</h3>
+            <p class="service-desc">Designing and building responsive, modern websites using HTML, CSS, and JavaScript with attention to user experience and clean design.</p>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- Subtle divider -->
+    <div class="zine-divider"></div>
+
+    <!-- ==========================================
+         SECTION 3: CONNECT WITH ME
+         ========================================== -->
+    <section class="connect-section" id="connect">
+      <div class="row align-items-center g-4">
+        
+        <!-- Left: Candid Portrait with Overlapping Badge -->
+        <div class="col-12 col-md-5">
+          <div class="position-relative">
+            <div class="photo-frame">
+              <div class="washi-tape washi-tape-top-right"></div>
+              <img src="assets/images/connect.jpg" alt="Zukiswa Phiri smiling in her studio holding notebook" width="400" height="600" loading="lazy">
+            </div>
+
+            <!-- Tilted Sticker: CONNECT WITH ME -->
+            <div class="connect-badge-anchor">
+              <div class="sticker-badge rotate-neg-2">
+                <span>CONNECT WITH ME</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Contact Information & Quick Note Box -->
+        <div class="col-12 col-md-7 ps-md-4 mt-5 mt-md-0">
+          
+
+
+
+          <!-- Quick Stamped Message Note Box -->
+          <div class="paper-form">
+            <h4 class="mb-3" style="font-size: 14px; letter-spacing: 0.08em;">
+              <i class="bi bi-pencil-square me-1"></i> [ SEND A DIRECT NOTE ]
+            </h4>
+            <form id="quickMessageForm">
+              <div class="row g-2">
+                <div class="col-12 col-sm-6">
+                  <label for="senderName" class="form-label">YOUR NAME:</label>
+                  <input type="text" id="senderName" class="form-control" placeholder="e.g. Nariman Hassan" required>
+                </div>
+                <div class="col-12 col-sm-6">
+                  <label for="senderEmail" class="form-label">YOUR EMAIL:</label>
+                  <input type="email" id="senderEmail" class="form-control" placeholder="e.g. [EMAIL_ADDRESS]" required>
+                </div>
+                <div class="col-12">
+                  <label for="senderMessage" class="form-label">PROJECT BRIEF / NOTE:</label>
+                  <textarea id="senderMessage" rows="2" class="form-control" placeholder="Tell me about your timeline, project, or say hello..." required></textarea>
+                </div>
+                <div class="col-12">
+                  <button type="submit" class="paper-btn-submit">
+                    ★ DISPATCH NOTE TO NARIMAN
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="zine-footer">
+      <p class="mb-1">
+        © 2026 NARIMAN HASSAN — ALL RIGHTS RESERVED.
+      </p>
+      <p class="mb-0 text-muted" style="font-size: 11px;">
+        CRAFTED WITH BOOTSTRAP 5 & BESPOKE EDITORIAL STYLING.
+      </p>
+    </footer>
+
+  </div>
+
+  <!-- ==========================================
+       MODAL: PROJECT CASE STUDY DETAILS
+       ========================================== -->
+  <div class="modal fade" id="projectModal" tabindex="-1" aria-labelledby="modalProjectTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content zine-modal">
+        <div class="modal-header zine-modal-header d-flex justify-content-between align-items-center">
+          <h4 class="modal-title m-0" id="modalProjectTitle" style="font-size: 16px;">PROJECT CASE STUDY</h4>
+          <button type="button" class="btn-close-zine" data-bs-dismiss="modal" aria-label="Close">[ CLOSE X ]</button>
+        </div>
+        <div class="modal-body p-3 p-md-4">
+          <div class="row g-3">
+            <div class="col-12 col-md-6">
+              <div class="photo-frame mb-3">
+                <img id="modalProjectImg" src="assets/images/workspace.jpg" alt="Project preview screenshot" class="img-fluid">
+              </div>
+            </div>
+            <div class="col-12 col-md-6">
+              <div class="p-2">
+                <div class="mb-2">
+                  <span class="fw-bold d-block text-muted" style="font-size: 11px;">TIMELINE / YEAR:</span>
+                  <span id="modalProjectYear" class="fw-bold font-monospace">2025</span>
+                </div>
+                <div class="mb-2">
+                  <span class="fw-bold d-block text-muted" style="font-size: 11px;">CLIENT / PLATFORM:</span>
+                  <span id="modalProjectClient" class="fw-bold font-monospace">Editorial Magazine</span>
+                </div>
+                <div class="mb-2">
+                  <span class="fw-bold d-block text-muted" style="font-size: 11px;">MY ROLE:</span>
+                  <span id="modalProjectRole" class="fw-bold font-monospace">Lead Copywriter</span>
+                </div>
+                <div class="mb-3">
+                  <span class="fw-bold d-block text-muted" style="font-size: 11px;">TOOLS & SKILLS:</span>
+                  <span id="modalProjectTools" class="fw-bold font-monospace">Bootstrap 5, Content Strategy</span>
+                </div>
+                <hr style="border-top: 1.5px dashed var(--ink-border);">
+                <p id="modalProjectDesc" class="mb-4" style="font-size: 13.5px; line-height: 1.7;">
+                  Project summary description.
+                </p>
+                <button type="button" class="sticker-badge clickable" data-bs-dismiss="modal">
+                  ← BACK TO PORTFOLIO
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div id="toastStamp" class="toast-stamp" role="status" aria-live="polite"></div>
+
+  <!-- Bootstrap 5 Bundle JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Custom JS -->
+  <script src="js/main.js"></script>
+</body>
+</html>
